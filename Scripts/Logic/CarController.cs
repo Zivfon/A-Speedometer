@@ -66,6 +66,9 @@ namespace SpeedometerDemo.Logic
                 runningData.gear--;
                 if (runningData.gear <= 0)
                     runningData.gear = 0;
+
+                var targetL = runningData.gear == 0 ? 1 : runningData.gear;
+                runningData.rpm = runningData.mph * 100 / targetL;
             }
 
             if (onGearUpdated != null)

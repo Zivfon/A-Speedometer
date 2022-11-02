@@ -37,6 +37,7 @@ namespace SpeedometerDemo.Visual
                 float angle = (((float)GameController.instance.CurrentCar.runningData.rpm
                                     / GameController.instance.CurrentCar.infoData.maxRpm) * (endAngle - initAngle)) + initAngle;
 
+                angle = Mathf.Clamp(angle, initAngle, endAngle);
                 angle = (angle < 0) ? angle + 360 : angle;
                 pointerImg.rectTransform.eulerAngles = new Vector3(pointerImg.transform.eulerAngles.x, pointerImg.transform.eulerAngles.y, angle);
             }

@@ -20,6 +20,8 @@ namespace SpeedometerDemo
         #region Unity Functions
         private void Awake()
         {
+            Application.targetFrameRate = 60;
+
             instance = this;
             carFactory = new CarFactory();
 
@@ -28,6 +30,7 @@ namespace SpeedometerDemo
         }
         void Start()
         {
+
             operationsPanel.Init();
             speedometerPanel.Init();
 
